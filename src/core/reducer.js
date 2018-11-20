@@ -6,10 +6,18 @@
  * https://opensource.org/licenses/MIT.
  */
 
+import { nothing } from 'immer';
 import { parse, stringify } from 'flatted';
 import * as Actions from './action-types';
 import { Random } from './random';
 import { Events } from './events';
+
+/**
+ * Moves can return this when they want to indicate
+ * that the combination of arguments is illegal and
+ * the move ought to be discarded.
+ */
+export const INVALID_MOVE = nothing;
 
 /**
  * Context API to allow writing custom logs in games.
